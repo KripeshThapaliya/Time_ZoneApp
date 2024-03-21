@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TimeZoneApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TimeZoneApp"
+    xmlns:views="clr-namespace:TimeZoneApp.Views"
+    xmlns:models ="clr-namespace:TimeZoneApp.Models"
+    xmlns:viewModels="using:TimeZoneApp.ViewModels"
+    x:DataType="viewModels:AppShellViewModel"
+    Shell.TabBarIsVisible="False"
+    Shell.NavBarIsVisible="True">
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="LoginPage" />
+
+    <ShellContent
+        Title="SignUp"
+        ContentTemplate="{DataTemplate local:SignUpPage}"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="SignUpPage" />
+
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Home" Icon="{x:Static models:Icons.Home}" ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="Contact" Icon="{x:Static models:Icons.ContactUs}" ContentTemplate="{DataTemplate views:ContactPage}" />
+        <ShellContent Title="About" Icon="{x:Static models:Icons.About}" ContentTemplate="{DataTemplate views:AboutPage}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="DarkBlue" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>

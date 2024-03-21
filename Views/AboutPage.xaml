@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeZoneApp.Views.AboutPage">
+    <Grid 
+          VerticalOptions="Center"
+          HorizontalOptions="Center" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               VerticalTextAlignment="Center"
+               Margin="0,0,0,50"
+               HorizontalTextAlignment="Center"
+               Text="TimeSync App Developers" 
+               FontSize="Title" FontAttributes="Bold" />
+        <Label Grid.Row="1"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               Text="KRIPESH THAPALIYE" 
+               FontSize="Subtitle" FontAttributes="Bold" />
+        <Label Grid.Row="2"
+               Margin="0,0,0,10"
+               VerticalTextAlignment="Center"
+               FontSize="Small"
+               HorizontalTextAlignment="Center"
+               Text="A00263014" />
+
+        <Label Grid.Row="3"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               Text="PRUTHVISINH C. GOHEL" 
+               FontSize="Subtitle" FontAttributes="Bold" />
+        <Label Grid.Row="4" 
+               VerticalTextAlignment="Center"
+               FontSize="Small"
+               Margin="0,0,0,10"
+               HorizontalTextAlignment="Center"
+               Text="A00273725" />
+
+        <Label Grid.Row="5"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               Text="ROSHAN KARKI" 
+               FontSize="Subtitle" FontAttributes="Bold" />
+        <Label Grid.Row="6" 
+               VerticalTextAlignment="Center"
+               FontSize="Small"
+               Margin="0,0,0,10"
+               HorizontalTextAlignment="Center"
+               Text="A00276018" />
+
+        <Label Grid.Row="7"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               Text="SAROJ KHATRI" 
+               FontSize="Subtitle" FontAttributes="Bold" />
+        <Label Grid.Row="8" 
+               VerticalTextAlignment="Center"
+               FontSize="Small"
+               HorizontalTextAlignment="Center"
+               Text="AOO270681" />
+
+    </Grid>
+</ContentPage>

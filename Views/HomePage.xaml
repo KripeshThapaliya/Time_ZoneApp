@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:TimeZoneApp.ViewModels"
+             xmlns:helpers="clr-namespace:TimeZoneApp.Helpers"
+             x:Class="TimeZoneApp.Views.HomePage" 
+             >
+
+    <Grid BackgroundColor="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Spacing="20" Grid.Row="0">
+            <SearchBar x:Name="HomeCitySearchBar" 
+                       MaximumWidthRequest="300"
+                       Text="{Binding HomeCitySearchText}"
+                       SearchCommand="{Binding SearchHomeCitiesCommand}"
+                       SearchCommandParameter="{Binding Text, Source={x:Reference HomeCitySearchBar}}"
+                       Placeholder="Search Home City" />
+            <ListView x:Name="HomeCitiesSearch"
+                      MaximumWidthRequest="325" 
+                      SelectionMode="Single"
+                      IsVisible="{Binding ShowHomeCityDetail, Converter={helpers:InverseBoolConverter}}"
+                      SelectedItem="{Binding HomeCitySelectedKey}"
+                      ItemSelected="Cities_OnItemSelected"
+                      ItemsSource="{Binding HomeCitiesSearch}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  Detail="{Binding Country}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid IsVisible="{Binding ShowHomeCityDetail}" 
+                  VerticalOptions="Center"
+                  Padding="40,0,0,0"
+                  HorizontalOptions="Center" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       VerticalTextAlignment="Center"
+                       Text="{Binding HomeCityDetail.Name}" FontSize="Subtitle" FontAttributes="Bold" />
+                <Label Grid.Row="1" Grid.Column="0"
+                       VerticalTextAlignment="Center"
+                       Text="{Binding HomeCityDetail.TempCondition}" />
+                <Label Grid.Row="0"
+                       Grid.Column="1"
+                       Padding="50,0,50,0"
+                       Text="{Binding HomeCityDetail.Time}"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="End"
+                       FontSize="Title" />
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Padding="50,0,50,0"
+                       Text="{Binding HomeCityDetail.Date}"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="End"
+                       Margin="1"
+                       FontSize="Title" />
+            </Grid>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout IsVisible="{Binding ShowHomeCityDetail}" Margin="0,50,0,0" Spacing="20" Grid.Row="1">
+            <SearchBar x:Name="DestinationCitySearchBar" 
+                       MaximumWidthRequest="325"
+                       Text="{Binding DestinationCitySearchText}"
+                       SearchCommand="{Binding SearchDestinationCitiesCommand}"
+                       SearchCommandParameter="{Binding Text, Source={x:Reference DestinationCitySearchBar}}"
+                       Placeholder="Search Destination City" />
+            <ListView x:Name="DestinationCitiesSearch"
+                      MaximumWidthRequest="325" 
+                      SelectionMode="Single"
+                      IsVisible="{Binding ShowDestinationCityDetail, Converter={helpers:InverseBoolConverter}}"
+                      SelectedItem="{Binding DestinationCitySelectedKey}"
+                      ItemSelected="DestinationCitiesSearch_OnItemSelected"
+                      ItemsSource="{Binding DestinationCitiesSearch}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  Detail="{Binding Country}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid IsVisible="{Binding ShowDestinationCityDetail}" 
+                  VerticalOptions="Center"
+                  Padding="40,0,0,0"
+                  HorizontalOptions="Center" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       VerticalTextAlignment="Center"
+                       Text="{Binding DestinationCityDetail.Name}" FontSize="Subtitle" FontAttributes="Bold" />
+                <Label Grid.Row="1" Grid.Column="0"
+                       VerticalTextAlignment="Center"
+                       Text="{Binding DestinationCityDetail.TempCondition}" />
+                <Label Grid.Row="0"
+                       Grid.Column="1"
+                       Padding="50,0,50,0"
+                       Text="{Binding DestinationCityDetail.Time}"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="End"
+                       FontSize="Title" />
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Padding="50,0,50,0"
+                       Text="{Binding DestinationCityDetail.Date}"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="End"
+                       Margin="1"
+                       FontSize="Title" />
+            </Grid>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
