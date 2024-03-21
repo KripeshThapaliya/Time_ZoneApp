@@ -50,4 +50,13 @@ public class AccountService : IAccountService
         }
         return null;
     }
+    public bool UserWithSameUserNameAlreadyExists(string username, string email)
+    {
+        return Connectivity.Current.NetworkAccess != NetworkAccess.Internet || _users.Any(o =>
+        (
+            o.UserName == username.ToLowerInvariant() ||
+            o.Email == email.ToLowerInvariant()
+        ));
+    }
+
 }
