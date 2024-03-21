@@ -32,4 +32,22 @@ public class AccountService : IAccountService
             : null;
     }
 
+    public UserInfo? SignUp(string username, string email, string password)
+    {
+        if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+        {
+            var newUser = new UserInfo
+            {
+                Id = _users.Count + 1,
+                UserName = username,
+                Email = email,
+                Password = password
+            };
+
+            _users.Add(newUser);
+
+            return newUser;
+        }
+        return null;
+    }
 }
