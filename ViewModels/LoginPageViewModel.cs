@@ -49,5 +49,17 @@ public partial class LoginPageViewModel(IAccountService accountService) : BaseVi
         }
     }
 
-    
+    [RelayCommand]
+    public async Task GoToSignUpPage()
+    {
+        ResetInputs();
+        await Shell.Current.GoToAsync($"//{nameof(SignUpPage)}");
+    }
+
+    private void ResetInputs()
+    {
+        UserName = string.Empty;
+        Password = string.Empty;
+    }
+
 }
