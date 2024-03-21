@@ -19,4 +19,17 @@ public class AccountService : IAccountService
         _users.Add(user);
     }
 
+    
+    public UserInfo? Login(string username, string password)
+    {
+        return Connectivity.Current.NetworkAccess == NetworkAccess.Internet
+            ? _users.FirstOrDefault(o =>
+                (
+                    o.UserName == username.ToLowerInvariant() ||
+                    o.Email == username.ToLowerInvariant()
+                ) &&
+                o.Password == password.ToLowerInvariant())
+            : null;
+    }
+
 }
