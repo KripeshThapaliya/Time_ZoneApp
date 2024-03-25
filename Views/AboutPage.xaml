@@ -34,5 +34,41 @@
                FontSize="Small"
                HorizontalTextAlignment="Center"
                Text="A00263014" />
-   
+        
+         <Label Grid.Row="3"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               Text="PRUTHVISINH C. GOHEL" 
+               FontSize="Subtitle" FontAttributes="Bold" />
+        <Label Grid.Row="4" 
+               VerticalTextAlignment="Center"
+               FontSize="Small"
+               Margin="0,0,0,10"
+               HorizontalTextAlignment="Center"
+               Text="A00273725" />
+
+        <Label Grid.Row="5"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               Text="ROSHAN KARKI" 
+               FontSize="Subtitle" FontAttributes="Bold" />
+        <Label Grid.Row="6" 
+               VerticalTextAlignment="Center"
+               FontSize="Small"
+               Margin="0,0,0,10"
+               HorizontalTextAlignment="Center"
+               Text="A00276018" />
+
+        <Label Grid.Row="7"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               Text="SAROJ KHATRI" 
+               FontSize="Subtitle" FontAttributes="Bold" />
+        <Label Grid.Row="8" 
+               VerticalTextAlignment="Center"
+               FontSize="Small"
+               HorizontalTextAlignment="Center"
+               Text="AOO270681" />
+
+    </Grid>
 </ContentPage>
