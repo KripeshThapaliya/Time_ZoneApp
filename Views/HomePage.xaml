@@ -6,6 +6,32 @@
              xmlns:helpers="clr-namespace:TimeZoneApp.Helpers"
              x:Class="TimeZoneApp.Views.HomePage" 
              >
+    <Grid BackgroundColor="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Spacing="20" Grid.Row="0">
+            <SearchBar x:Name="HomeCitySearchBar" 
+                       MaximumWidthRequest="300"
+                       Text="{Binding HomeCitySearchText}"
+                       SearchCommand="{Binding SearchHomeCitiesCommand}"
+                       SearchCommandParameter="{Binding Text, Source={x:Reference HomeCitySearchBar}}"
+                       Placeholder="Search Home City" />
+            <ListView x:Name="HomeCitiesSearch"
+                      MaximumWidthRequest="325" 
+                      SelectionMode="Single"
+                      IsVisible="{Binding ShowHomeCityDetail, Converter={helpers:InverseBoolConverter}}"
+                      SelectedItem="{Binding HomeCitySelectedKey}"
+                      ItemSelected="Cities_OnItemSelected"
+                      ItemsSource="{Binding HomeCitiesSearch}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  Detail="{Binding Country}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
 
   
 </ContentPage>
