@@ -128,8 +128,22 @@ public partial class HomePageViewModel : BaseViewModel
         };
     }
 
+    public void DestinationCitySelected()
+    {
+        DestinationCitiesSearch = [];
+        ShowDestinationCityDetail = false;
+        try
+        {
+            var result = _timeService.GetTime(DestinationCitySelectedKey.Name);
 
-
-
-
+            DestinationCityDetail = ConvertToCityDetail(result);
+            DestinationCitySearchText = string.Empty;
+            ShowDestinationCityDetail = true;
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(exception);
+            throw;
+        }
+    }
 }
