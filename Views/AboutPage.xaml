@@ -17,5 +17,22 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               VerticalTextAlignment="Center"
+               Margin="0,0,0,50"
+               HorizontalTextAlignment="Center"
+               Text="TimeSync App Developers" 
+               FontSize="Title" FontAttributes="Bold" />
+        <Label Grid.Row="1"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               Text="KRIPESH THAPALIYA" 
+               FontSize="Subtitle" FontAttributes="Bold" />
+        <Label Grid.Row="2"
+               Margin="0,0,0,10"
+               VerticalTextAlignment="Center"
+               FontSize="Small"
+               HorizontalTextAlignment="Center"
+               Text="A00263014" />
    
 </ContentPage>
