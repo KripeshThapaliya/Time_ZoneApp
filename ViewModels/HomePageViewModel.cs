@@ -96,6 +96,27 @@ public partial class HomePageViewModel : BaseViewModel
         }
     }
 
+     public void HomeCitySelected()
+    {
+        HomeCitiesSearch = [];
+        ShowHomeCityDetail = false;
+        try
+        {
+            var result = _timeService.GetTime(HomeCitySelectedKey.Name);
+
+            HomeCityDetail = ConvertToCityDetail(result);
+            HomeCitySearchText = string.Empty;
+            ShowHomeCityDetail = true;
+            ShowDestinationCityDetail = true;
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(exception);
+            throw;
+        }
+    }
+
+
 
 
 }
