@@ -41,5 +41,23 @@ public partial class HomePageViewModel : BaseViewModel
 
     private readonly ITimeService _timeService;
 
+    /// <inheritdoc/>
+    public HomePageViewModel(ITimeService timeService)
+    {
+        _timeService = timeService;
+        HomeCitiesSearch = [];
+        HomeCitySelectedKey = new();
+        HomeCitySearchText = string.Empty;
+        ShowHomeCityDetail = false;
+        HomeCityDetail = new();
+
+        DestinationCitiesSearch = [];
+        DestinationCitySelectedKey = new();
+        DestinationCitySearchText = string.Empty;
+        ShowDestinationCityDetail = false;
+        DestinationCityDetail = new();
+    }
+
+
 
 }
