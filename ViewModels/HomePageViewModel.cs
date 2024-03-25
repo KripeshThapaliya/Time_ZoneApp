@@ -58,6 +58,44 @@ public partial class HomePageViewModel : BaseViewModel
         DestinationCityDetail = new();
     }
 
+    [RelayCommand]
+    void SearchHomeCities(string query)
+    {
+        if (query.Length < 4) { return; }
+
+        ShowHomeCityDetail = false;
+        try
+        {
+            var result = _timeService.SearchCities(query);
+
+            HomeCitiesSearch = result;
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(exception);
+            throw;
+        }
+    }
+
+    [RelayCommand]
+    void SearchDestinationCities(string query)
+    {
+        if (query.Length < 4) { return; }
+
+        ShowDestinationCityDetail = false;
+        try
+        {
+            var result = _timeService.SearchCities(query);
+
+            DestinationCitiesSearch = result;
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(exception);
+            throw;
+        }
+    }
+
 
 
 }
