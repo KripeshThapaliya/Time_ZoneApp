@@ -116,6 +116,19 @@ public partial class HomePageViewModel : BaseViewModel
         }
     }
 
+    private CityDetail ConvertToCityDetail(CityTime result)
+    {
+        return new CityDetail
+        {
+            Name = result.Location.Name,
+            TempCondition = $"{result.Current.Temp_F}°F, {result.Current.Condition.Text}",
+            Icon = $"https:{result.Current.Condition.Icon}",
+            Time = result.Location.LocalTime.ToString("hh:mm tt"),
+            Date = result.Location.LocalTime.ToString("d")
+        };
+    }
+
+
 
 
 
